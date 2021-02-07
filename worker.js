@@ -6,9 +6,10 @@ addEventListener('message', (e) => {
             imgData.data[index + 3] = 127;
         }
     }
-    postMessage(imgData);
+    postMessage(imgData, [imgData.data.buffer]);
 });
 
-// setInterval(() => {
-//     postMessage('RETURN MESSAGE');
-// }, 2000);
+// worker.postMessage(message, [transfer]);
+// Transferable objects are instances of classes 
+// like ArrayBuffer, MessagePort or ImageBitmap objects 
+// that can be transferred. null is not an acceptable value for transfer.
